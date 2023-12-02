@@ -143,4 +143,30 @@ public class FinderTest
         
         Assert.Equal(254, result);
     }
+    
+    [Fact]
+    public void GetSumOfCalibrationValues_1lines_33()
+    {
+        var input = new[]
+        {
+            "twovgtprdzcjjzkq3ffsbcblnpq",
+        };
+        
+        var result = Finder.GetSumOfCalibrationValues(input);
+        
+        Assert.Equal(33, result);
+    }
+    
+    [Fact]
+    public void GetSumOfCalibrationValues_1lines_0()
+    {
+        var input = new[]
+        {
+            "twovgtprdzcjjzkqffsbcblnpq",
+        };
+        
+        var result = Finder.GetSumOfCalibrationValues(input);
+        
+        Assert.Equal(0, result);
+    }
 }
