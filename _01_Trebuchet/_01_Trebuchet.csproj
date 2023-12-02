@@ -9,6 +9,9 @@
 
     <ItemGroup>
       <None Remove="data.txt" />
+      <AdditionalFiles Include="data.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AdditionalFiles>
     </ItemGroup>
 
 </Project>

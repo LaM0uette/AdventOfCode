@@ -1,4 +1,6 @@
-﻿namespace _01_Trebuchet;
+﻿using System.Text.RegularExpressions;
+
+namespace _01_Trebuchet;
 
 public static class Finder
 {
@@ -9,23 +11,36 @@ public static class Finder
     
     public static int FindFirstAndLastDigits(string input)
     {
-        char? firstDigit = null;
-        char? lastDigit = null;
+        int? firstDigit = null;
+        int? lastDigit = null;
 
-        foreach (var c in input.Where(char.IsDigit))
+        var matches = Regex.Matches(input, @"one|two|three|four|five|six|seven|eight|nine|\d");
+
+        foreach (Match match in matches)
         {
-            if (firstDigit == null)
-            {
-                firstDigit = c;
-                continue;
-            }
-            
-            lastDigit = c;
+            var currentDigit = WordToDigit(match.Value);
+
+            firstDigit ??= currentDigit;
+            lastDigit = currentDigit;
         }
 
-        if (firstDigit == null)
-            return 0;
-
-        return int.Parse(lastDigit == null ? $"{firstDigit}{firstDigit}" : $"{firstDigit}{lastDigit}");
+        return firstDigit == null ? 0 : int.Parse($"{firstDigit}{lastDigit}");
+    }
+    
+    private static int WordToDigit(string word)
+    {
+        return word switch
+        {
+            "one" => 1,
+            "two" => 2,
+            "three" => 3,
+            "four" => 4,
+            "five" => 5,
+            "six" => 6,
+            "seven" => 7,
+            "eight" => 8,
+            "nine" => 9,
+            _ => int.Parse(word)
+        };
     }
 }

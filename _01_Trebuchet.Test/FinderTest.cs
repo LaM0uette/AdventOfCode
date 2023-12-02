@@ -129,7 +129,7 @@ public class FinderTest
     }
     
     [Fact]
-    public void GetSumOfCalibrationValues_4lines_254()
+    public void GetSumOfCalibrationValues_4lines_185()
     {
         var input = new[]
         {
@@ -141,11 +141,11 @@ public class FinderTest
         
         var result = Finder.GetSumOfCalibrationValues(input);
         
-        Assert.Equal(254, result);
+        Assert.Equal(185, result);
     }
     
     [Fact]
-    public void GetSumOfCalibrationValues_1lines_33()
+    public void GetSumOfCalibrationValues_1lines_23()
     {
         var input = new[]
         {
@@ -154,7 +154,7 @@ public class FinderTest
         
         var result = Finder.GetSumOfCalibrationValues(input);
         
-        Assert.Equal(33, result);
+        Assert.Equal(23, result);
     }
     
     [Fact]
@@ -162,11 +162,46 @@ public class FinderTest
     {
         var input = new[]
         {
-            "twovgtprdzcjjzkqffsbcblnpq",
+            "vgtprdzcjjzkqffsbcblnpq",
         };
         
         var result = Finder.GetSumOfCalibrationValues(input);
         
         Assert.Equal(0, result);
+    }
+    
+    [Fact]
+    public void FindFirstAndLastDigits_part2_281()
+    {
+        var input = new[]
+        {
+            "two1nine",
+            "eightwothree",
+            "abcone2threexyz",
+            "xtwone3four",
+            "4nineeightseven2",
+            "zoneight234",
+            "7pqrstsixteen",
+        };
+        
+        var inputResult = new[]
+        {
+            29,
+            83,
+            13,
+            24,
+            42,
+            14,
+            76,
+        };
+
+        for(var i = 0; i < input.Length; i++)
+        {
+            var result = Finder.FindFirstAndLastDigits(input[i]);
+            Assert.Equal(inputResult[i], result);
+        }
+        
+        var finalResult = Finder.GetSumOfCalibrationValues(input);
+        Assert.Equal(281, finalResult);
     }
 }
