@@ -1,28 +1,31 @@
 ﻿namespace _01_Trebuchet;
 
-public class Finder
+public static class Finder
 {
-    public int FindFirstAndLastDigits(string input)
+    public static int GetSumOfCalibrationValues(IEnumerable<string> input)
     {
-        var output = "";
-        foreach (var c in input)
+        return input.Sum(FindFirstAndLastDigits);
+    }
+    
+    public static int FindFirstAndLastDigits(string input)
+    {
+        char? firstDigit = null;
+        char? lastDigit = null;
+
+        foreach (var c in input.Where(char.IsDigit))
         {
-            if (char.IsDigit(c))
+            if (firstDigit == null)
             {
-                output += c;
+                firstDigit = c;
+                continue;
             }
-        }
-        
-        switch (output.Length)
-        {
-            case 0: return 0;
-            case 1: return int.Parse(output);
+            
+            lastDigit = c;
         }
 
-        var firstDigit = output[0];
-        var lastDigit = output[^1];
-        var twoDigit = $"{firstDigit}{lastDigit}";
-        
-        return int.Parse(twoDigit);
+        if (firstDigit == null)
+            return 0;
+
+        return int.Parse(lastDigit == null ? $"{firstDigit}{firstDigit}" : $"{firstDigit}{lastDigit}");
     }
 }
