@@ -13,6 +13,12 @@ public class Finder
             }
         }
         
+        switch (output.Length)
+        {
+            case 0: return 0;
+            case 1: return int.Parse(output);
+        }
+
         var firstDigit = output[0];
         var lastDigit = output[^1];
         var twoDigit = $"{firstDigit}{lastDigit}";

@@ -69,6 +69,17 @@ public class FinderTest
     }
     
     [Fact]
+    public void FindFirstAndLastDigits_pqr3stu8vwx_12()
+    {
+        var finder = new Finder();
+        const string input = "pqr3stu8vwx";
+        
+        var result = finder.FindFirstAndLastDigits(input);
+        
+        Assert.Equal(38, result);
+    }
+    
+    [Fact]
     public void FindFirstAndLastDigits_a1b2c3d4e5f_15()
     {
         var finder = new Finder();
@@ -77,5 +88,38 @@ public class FinderTest
         var result = finder.FindFirstAndLastDigits(input);
         
         Assert.Equal(15, result);
+    }
+    
+    [Fact]
+    public void FindFirstAndLastDigits_treb7uchet_12()
+    {
+        var finder = new Finder();
+        const string input = "treb7uchet";
+        
+        var result = finder.FindFirstAndLastDigits(input);
+        
+        Assert.Equal(7, result);
+    }
+    
+    [Fact]
+    public void FindFirstAndLastDigits_treb0uchet_12()
+    {
+        var finder = new Finder();
+        const string input = "treb0uchet";
+        
+        var result = finder.FindFirstAndLastDigits(input);
+        
+        Assert.Equal(0, result);
+    }
+    
+    [Fact]
+    public void FindFirstAndLastDigits_trebuchet_12()
+    {
+        var finder = new Finder();
+        const string input = "trebuchet";
+        
+        var result = finder.FindFirstAndLastDigits(input);
+        
+        Assert.Equal(0, result);
     }
 }
