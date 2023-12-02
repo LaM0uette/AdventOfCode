@@ -7,7 +7,7 @@
          const string file = "data.txt";
          var lines = File.ReadAllLines(file);
         
-         var result = Finder.GetSumOfCalibrationValues(lines);
+         var result = Finder.GetSumOfCalibrationValuesBis(lines);
          Console.WriteLine(result);
      }
  }
