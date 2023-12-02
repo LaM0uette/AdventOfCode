@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trebuchet", "Trebuchet\Trebuchet.csproj", "{B286E708-9F99-4E18-BBB8-BD7F89B05504}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_01_Trebuchet", "_01_Trebuchet\_01_Trebuchet.csproj", "{B286E708-9F99-4E18-BBB8-BD7F89B05504}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trebuchet.Test", "Trebuchet.Test\Trebuchet.Test.csproj", "{E621D88D-2C41-45FB-9AC8-00789D2B565D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_01_Trebuchet.Test", "_01_Trebuchet.Test\_01_Trebuchet.Test.csproj", "{E621D88D-2C41-45FB-9AC8-00789D2B565D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
