@@ -22,15 +22,21 @@ public struct Game(int id)
 
 public class CubeParser(int maxCubeRed, int maxCubeGreen, int maxCubeBlue)
 {
-    #region Statements
-
-    private int MaxCubeRed { get; } = maxCubeRed; // 12
-    private int MaxCubeGreen { get; } = maxCubeGreen; // 13
-    private int MaxCubeBlue { get; } = maxCubeBlue; // 14
+    #region State
+    private int MaxCubeRed { get; } = maxCubeRed;
+    private int MaxCubeGreen { get; } = maxCubeGreen;
+    private int MaxCubeBlue { get; } = maxCubeBlue;
 
     #endregion
 
     #region Functions
+    
+    public int GetSumOfValidGames(IEnumerable<string> input)
+    {
+        var games = input.Select(ParseLine).ToList();
+        var validGames = games.Where(GameIsValid).ToList();
+        return validGames.Sum(game => game.Id);
+    }
     
     public static Game ParseLine(string line)
     {
