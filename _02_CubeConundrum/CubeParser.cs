@@ -108,4 +108,37 @@ public class CubeParser(int maxCubeRed, int maxCubeGreen, int maxCubeBlue)
     }
 
     #endregion
+
+    #region Puissance
+    
+    public static int GetSumOfValidGamesPuissance(IEnumerable<string> input)
+    {
+        var games = input.Select(ParseLine).ToList();
+        return GetSumOfValidGamesPuissance(games);
+    }
+
+    public static int GetSumOfValidGamesPuissance(IEnumerable<Game> games)
+    {
+        var result = 0;
+        
+        foreach (var game in games)
+        {
+            var maxPuissanceRed = 0;
+            var maxPuissanceGreen = 0;
+            var maxPuissanceBlue = 0;
+            
+            foreach (var subset in game.Subsets)
+            {
+                maxPuissanceRed = Math.Max(maxPuissanceRed, subset.Cubes.Red);
+                maxPuissanceGreen = Math.Max(maxPuissanceGreen, subset.Cubes.Green);
+                maxPuissanceBlue = Math.Max(maxPuissanceBlue, subset.Cubes.Blue);
+            }
+            
+            result += maxPuissanceRed * maxPuissanceGreen * maxPuissanceBlue;
+        }
+
+        return result;
+    }
+
+    #endregion
 }

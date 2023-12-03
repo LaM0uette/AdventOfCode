@@ -11,5 +11,7 @@ public static class Program
         
         var result = parser.GetSumOfValidGames(lines);
         Console.WriteLine(result);
+        
+        Console.WriteLine(CubeParser.GetSumOfValidGamesPuissance(lines));
     }
 }
