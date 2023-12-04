@@ -1,4 +1,4 @@
-namespace _03_GearRatios.Test;
+namespace Day03_GearRatios.Test;
 
 public class SchematicParserTest
 {

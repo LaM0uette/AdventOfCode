@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace _03_GearRatios;
+namespace Day03_GearRatios;
 
 public struct Part
 {

@@ -1,4 +1,4 @@
-﻿namespace _01_Trebuchet;
+﻿namespace Day01_Trebuchet;
 
  public static class Program
  {

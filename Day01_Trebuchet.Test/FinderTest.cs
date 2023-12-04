@@ -1,4 +1,4 @@
-namespace _01_Trebuchet.Test;
+namespace Day01_Trebuchet.Test;
 
 public class FinderTest
 {

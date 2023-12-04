@@ -1,4 +1,4 @@
-﻿namespace _02_CubeConundrum;
+﻿namespace Day02_CubeConundrum;
 
 public static class Program
 {

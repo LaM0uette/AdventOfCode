@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace _02_CubeConundrum;
+namespace Day02_CubeConundrum;
 
 public struct Cubes(int red, int green, int blue)
 {

@@ -23,7 +23,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\_01_Trebuchet\_01_Trebuchet.csproj" />
+      <ProjectReference Include="..\Day03_GearRatios\Day03_GearRatios.csproj" />
     </ItemGroup>
 
 </Project>

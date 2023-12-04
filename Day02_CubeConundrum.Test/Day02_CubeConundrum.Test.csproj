@@ -23,7 +23,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\_02_CubeConundrum\_02_CubeConundrum.csproj" />
+      <ProjectReference Include="..\Day02_CubeConundrum\Day02_CubeConundrum.csproj" />
     </ItemGroup>
 
 </Project>

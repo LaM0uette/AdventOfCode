@@ -1,4 +1,4 @@
-namespace _02_CubeConundrum.Test;
+namespace Day02_CubeConundrum.Test;
 
 public class CubeParserTest
 {
