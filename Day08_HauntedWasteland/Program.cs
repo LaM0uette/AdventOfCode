@@ -1,4 +1,4 @@
-﻿namespace Day01_Trebuchet;
+﻿namespace Day08_HauntedWasteland;
 
 public static class Program
 {
@@ -6,8 +6,5 @@ public static class Program
     {
         const string file = "data.txt";
         var lines = File.ReadAllLines(file);
-
-        var result = Finder.GetSumOfCalibrationValuesBis(lines);
-        Console.WriteLine(result);
     }
 }
