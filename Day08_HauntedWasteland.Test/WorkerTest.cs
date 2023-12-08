@@ -28,4 +28,40 @@ public class WorkerTest
         Assert.Equal("ZZZ", elements[2].Left);
         Assert.Equal("GGG", elements[2].Right);
     }
+
+    [Fact]
+    public void FindZZZ_Demo1_2()
+    {
+        const string path = "RL";
+        var lines = new[]
+        {
+            "AAA = (BBB, CCC)",
+            "BBB = (DDD, EEE)",
+            "CCC = (ZZZ, GGG)",
+            "DDD = (DDD, DDD)",
+            "EEE = (EEE, EEE)",
+            "GGG = (GGG, GGG)",
+            "ZZZ = (ZZZ, ZZZ)",
+        };
+        
+        var result = Worker.FindZZZ(lines, path);
+        
+        Assert.Equal(2, result);
+    }
+    
+    [Fact]
+    public void FindZZZ_Demo2_6()
+    {
+        const string path = "LLR";
+        var lines = new[]
+        {
+            "AAA = (BBB, BBB)",
+            "BBB = (AAA, ZZZ)",
+            "ZZZ = (ZZZ, ZZZ)",
+        };
+        
+        var result = Worker.FindZZZ(lines, path);
+        
+        Assert.Equal(6, result);
+    }
 }
