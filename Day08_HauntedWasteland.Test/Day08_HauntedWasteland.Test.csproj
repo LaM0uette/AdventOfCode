@@ -22,4 +22,8 @@
         </PackageReference>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Day08_HauntedWasteland\Day08_HauntedWasteland.csproj" />
+    </ItemGroup>
+
 </Project>
